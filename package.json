@@ -1,0 +1,18 @@
+{
+  "name": "exccweb",
+  "version": "1.0.0",
+  "description": "ExchangeCoin Website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "excc",
+    "www"
+  ],
+  "author": "Wiktor Glowacki",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

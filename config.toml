@@ -1,0 +1,25 @@
+baseURL = 'https://excc.co'
+languageCode = 'en-us'
+title = 'EXCC - ExchangeCoin | Open Source Cryptocurrency'
+theme = "excc"
+relativeURLS = true
+
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+
+[module]
+  [[module.mounts]]
+    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    target = "assets/js/bootstrap.bundle.min.js"
+  [[module.mounts]]
+    source = "themes/excc/assets/js/vsp.js"
+    target = "assets/js/vsp.js"
+  [[module.mounts]]
+    source = "themes/excc/assets/js/jquerydataTables.min.js"
+    target = "assets/js/jquerydataTables.min.js"
+  [[module.mounts]]
+    source = "themes/excc/assets/js/jquery.min.js"
+    target = "assets/js/jquery.min.js"
+  [[module.mounts]]
+    source = "themes/excc/assets/js/moment.min.js"
+    target = "assets/js/moment.min.js"

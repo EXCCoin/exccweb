@@ -1,0 +1,60 @@
+{{ $currentPage := . }}
+<header class="container-xxl">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ .Site.BaseURL }}"><span class="logo"></span></a>
+            <button class="navbar-toggler toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="/img/list.svg" />
+            </button>
+            <div class="offcanvas offcanvas-top d-lg-none" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="{{ .Site.BaseURL }}"><span class="logo"></span></a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        {{ range .Site.Menus.main.ByWeight }}
+                        <li class="nav-item">
+                            <a class='nav-link {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active {{ end }}'
+                               href="{{ absURL .URL }}">
+                                {{ .Title }}
+                            </a>
+                        </li>
+                        {{ end }}
+                        <h6 class="text-center pt-2 pb-2">Buy EXCC</h6>
+                        <li class="nav-item"><a class="nav-link" href="https://xult.com/performance-trading/excc_btc">Xult.com</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                               href="https://www.probit.com/app/exchange/EXCC-BTC">Probit.com</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                               href="https://www.bitforex.com/en/spot/excc_btc">Bitforex.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    {{ range .Site.Menus.main.ByWeight }}
+                    <li class="nav-item">
+                        <a class='nav-link {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active {{ end }}'
+                           href="{{ absURL .URL }}">
+                            {{ .Title }}
+                        </a>
+                    </li>
+                    {{ end }}
+                    <li class="nav-item dropdown buyExcc">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Buy EXCC <span class="buyArrow"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="https://xult.com/performance-trading/excc_btc">Xult.com</a></li>
+                            <li><a class="nav-link"
+                                   href="https://www.probit.com/app/exchange/EXCC-BTC">Probit.com</a></li>
+                            <li><a class="nav-link"
+                                   href="https://www.bitforex.com/en/spot/excc_btc">Bitforex.com</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

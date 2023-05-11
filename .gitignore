@@ -1,0 +1,6 @@
+.idea
+.hugo*
+node_modules
+public
+EXCC-Brandbook.pdf
+pgp.txt

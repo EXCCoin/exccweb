@@ -1,0 +1,567 @@
+$white: #ffffff;
+$black: #000000;
+$background: $black;
+$lead: #f9f8e3;
+$red: #c70000;
+
+$body-color: $white;
+$body-bg: $background;
+$border-radius: .4rem;
+$navbar-dark-color: $white;
+$navbar-dark-hover-color: $lead;
+$navbar-dark-active-color: $lead;
+$navbar-brand-padding-y: 0;
+$navbar-brand-margin-end: 0;
+$navbar-nav-link-padding-x: 0;
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-inner-border-radius: 0;
+$card-bg: transparent;
+$mainfont: 'Roboto', sans-serif;
+$spacefont: 'Space Grotesk', sans-serif;
+$btn-box-shadow: 0;
+$btn-border-radius: 0;
+$container-max-widths: (xxl: 1400px);
+$bs-body-text-align: left;
+$dropdown-bg: rgba(0,0,0,0.9);
+$btn-border-radius: 8px;
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $red;
+$dropdown-link-hover-bg: transparent;
+$navbar-active-color: $red !important;
+$offcanvas-bg-color: rgba(0,0,0,0.8);
+$btn-close-color: $white;
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-repeat: no-repeat;
+  background-color: $background;
+
+  &.excc-exchangecoin-open-source-cryptocurrency {
+    background-image: url("../img/home.png");
+    background-size: auto;
+    background-position: right top;
+
+    @media (max-width: 992px) {
+      & {
+        background-size: contain;
+        background-position: center bottom;
+      }
+    }
+  }
+
+  &.about-excc {
+    background-image: url("../img/about.png");
+    background-position: right bottom;
+
+    @media (max-width: 992px) {
+      & {
+        background-size: cover;
+      }
+    }
+  }
+
+  &.mining-staking {
+    background-image: url("../img/mining.png");
+    background-size: cover;
+  }
+
+  &.wallets {
+    background-image: url("../img/wallets.png");
+    @media (min-width: 992px) {
+      background-size: cover;
+    }
+  }
+
+  &.exchanges {
+    background-image: url("../img/exchanges.png");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &.contact-us, &.vsp-list {
+    background-image: url("../img/contact.png");
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+
+header {
+
+  .offcanvas {
+    height: 40vh !important;
+  }
+
+  nav {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+
+    @media all and (max-width: 992px) {
+      & {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+      }
+    }
+
+    &.navbar {
+
+      & .navbar-brand .logo {
+        background-image: url("../img/ExchangeCoin.png");
+        width: 209px;
+        height: 33px;
+        display: block;
+      }
+
+      @media all and (max-width: 992px) {
+        & .navbar-brand .logo {
+          background-image: url("../img/ExchangeCoin.png");
+          width: 209px;
+          height: 33px;
+          display: block;
+        }
+      }
+
+      & .nav-link.active {
+        color: $red;
+      }
+    }
+
+    & .toggler {
+      border-color: rgba(255,255,255,0.1);
+      border-radius: 2px;
+
+      & img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .nav-link {
+      color: $white;
+      font-family: $mainfont;
+      font-size: 18px;
+      font-weight: 300;
+      position: relative;
+
+      @media all and (max-width: 992px) {
+        & {
+          color: $white;
+          font-size: 18px;
+          padding: 4px 0;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+
+      &:hover, &:active, &:focus {
+        color: $red;
+      }
+    }
+
+    .nav-item {
+      padding-right: 25px;
+
+      @media (max-width: 992px) {
+        padding-right: 0;
+      }
+
+      & .dropdown-toggle::after {
+        display: none !important;
+      }
+
+      &.buyExcc .btn {
+        color: $white;
+        min-width: 100px;
+        text-align: center;
+        position: relative;
+        top: 4px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 8px;
+          padding: 1px;
+          background: linear-gradient(180deg, rgba(193, 39, 45, 0.8), rgba(42, 62, 94, 0.8));
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+        }
+
+        &:hover::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 8px;
+          padding: 1px;
+          background: transparent;
+          pointer-events: none;
+        }
+
+        &:hover, &:checked, &:active, &.show {
+          border-color: #5263a8;
+          background: linear-gradient(180deg, rgba(193, 39, 45, 0.8), rgba(42, 62, 94, 0.8));
+        }
+
+        & span.buyArrow {
+          background-image: url("../img/arrows_down.png");
+          height: 12px;
+          width: 16px;
+          display: inline-flex;
+
+          &:hover {
+            background-image: url("../img/arrows_down_hover.png");
+          }
+        }
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+
+      &.buyExcc {
+        background-color: transparent;
+
+        @media (max-width: 992px) {
+          & {
+            background-color: $background;
+            text-align: center;
+
+            & .nav-link {
+              color: $lead !important;
+              font-size: 20px;
+
+              &:hover::after {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &:hover > .nav-link .buyArrow {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-image: url("../img/footer.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-top: 3px solid $red;
+  border-image: radial-gradient(rgba(193, 39, 45, 0.8), rgba(42, 62, 94, 0.8)) 180;
+  height: 144px;
+
+  & .divider {
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    width: 45px;
+    margin-left: 45px;
+    height: 70%;
+
+    @media all and (max-width: 992px) {
+      & {
+        width: 15px;
+        margin-left: 15px;
+        height: 70%;
+      }
+    }
+  }
+
+  & .navbar.socials a img:hover {
+    filter: grayscale($white);
+  }
+
+  & .nav-link {
+    padding: 0;
+
+    & a {
+      color: $white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    & img {
+      padding: 8px 0;
+    }
+  }
+}
+
+main {
+
+  &.content {
+
+    @media (max-width: 992px) {
+      & {
+        padding-bottom: 190px;
+      }
+    }
+
+    & a {
+      color: red;
+    }
+    & p {
+      text-align: justify;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+
+      @media (max-width: 992px) {
+        & {
+          text-align: center;
+          text-shadow: 0 0 3px rgba(0,0,0,0.9);
+        }
+      }
+
+    }
+
+    &.about-excc {
+      padding-bottom: 190px;
+
+      .card {
+        padding-top: 46px;
+
+        &.anonymity {
+          &::after {
+            background-image: url("../img/anonymous.png");
+            background-color: $black;
+            background-repeat: no-repeat;
+            background-position: center center;
+            content: "";
+            display: block;
+            height: 63px;
+            width: 52px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: -26px;
+            z-index: 1;
+          }
+        }
+
+        &.decentralised {
+          &::after {
+            background-image: url("../img/decentralised.png");
+            background-color: $black;
+            background-repeat: no-repeat;
+            background-position: center center;
+            content: "";
+            display: block;
+            height: 63px;
+            width: 63px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: -26px;
+            z-index: 1;
+          }
+        }
+
+        &.security {
+          &::after {
+            background-image: url("../img/security.png");
+            background-color: $black;
+            background-repeat: no-repeat;
+            background-position: center center;
+            content: "";
+            display: block;
+            height: 68px;
+            width: 56px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: -26px;
+            z-index: 1;
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 8px;
+          padding: 4px;
+          background: linear-gradient(180deg, rgba(56, 14, 22, 0.8), rgba(119, 46, 51, 0.8));
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &.exchanges {
+      @media all and (min-width: 992px) {
+        & {
+          height: calc(100% - 260px) !important;
+        }
+      }
+      background-size: 50%;
+      background-image: url("../img/exchangesbt.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &.mining-staking {
+
+      @media (min-width: 992px) {
+        height: calc(100% - 260px) !important;
+      }
+
+      .card {
+        border-radius: 8px;
+        padding: 4px;
+        border: 1px solid rgba(129, 129, 190, 0.8);
+        box-shadow: 0 0 2px rgba(129,129,129,0.9);
+        background: rgba(0, 0, 0, 0.8);
+
+        & .card-text {
+          font-size: 18px;
+          line-height: 26px;
+          font-weight: 300;
+          font-family: $mainfont;
+
+          @media (max-width: 992px) {
+            & {
+              text-shadow: 0 0 3px rgba(0,0,0,0.9);
+              background-color: rgba(0,0,0,0.6);
+            }
+          }
+        }
+
+        &.mining {
+          background-size: 100%, 30%;
+          background-image: url("../img/miningtower.png"), url("../img/x1.png");
+          background-repeat: no-repeat;
+          background-position: bottom, top right;
+
+          @media (max-width: 992px) {
+            & {
+              background-size: cover;
+              background-image: url("../img/miningtower.png");
+            }
+          }
+        }
+
+        &.staking {
+          background-size: 100%, 30%;
+          background-image: url("../img/staking.png"), url("../img/x2.png");
+          background-repeat: no-repeat;
+          background-position: bottom, top left;
+
+          @media (max-width: 992px) {
+            & {
+              background-size: cover;
+              background-image: url("../img/staking.png");
+            }
+          }
+        }
+      }
+    }
+
+    &.wallets {
+      @media (min-width: 992px) {
+        height: calc(100% - 260px) !important;
+        background-size: 30%, 40%;
+      }
+      background-size: 80%, 8-0%;
+      background-image: url("../img/walletbt.png"), url("../img/diamond.png");
+      background-repeat: no-repeat;
+      background-position: bottom, center;
+
+      .card {
+        border-radius: 8px;
+        padding: 4px;
+        border: 1px solid rgba(129, 129, 190, 0.8);
+        box-shadow: 0 0 2px rgba(129,129,129,0.3);
+        background: rgba(0, 0, 0, 0.8);
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 600;
+        font-family: $spacefont;
+      }
+
+      .btn-download {
+        border: 1px solid rgba(129,129,190,0.8);
+        background: linear-gradient(180deg, rgba(69, 91, 91, 0.9), rgba(7, 10, 30, 0.9));
+        min-width: 150px;
+        line-height: 16px;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px;
+        color: $white !important;
+      }
+
+      & img {
+        position: relative;
+        top: -2px;
+        margin-right: 5px;
+      }
+    }
+
+    &.contact-us {
+      @media (min-width: 992px) {
+        height: calc(100% - 235px) !important;
+      }
+
+      & .socials a {
+        padding: 0 8px;
+      }
+    }
+
+    .card {
+
+      padding: 20px;
+
+      &-title {
+        font-size: 16px;
+        text-align: center;
+        padding-bottom: 36px;
+        font-weight: 500;
+      }
+
+      &-text {
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 24px;
+      }
+
+    }
+  }
+}
+
+.lead {
+
+  margin-left: 275px;
+  margin-top: 250px;
+
+  @media (max-width: 992px) {
+    & {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  & h1 {
+    font-family: $spacefont;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 5px;
+  }
+
+  & p {
+    font-family: $spacefont;
+    font-size: 20px;
+    font-weight: 400px;
+  }
+}
+
+

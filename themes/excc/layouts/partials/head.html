@@ -1,0 +1,28 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <meta name="description"
+          content="Truly user-oriented, utility cryptocurrency. Delivering highest standards for over three years on the market!"/>
+    <meta property="og:title" content="EXCC - ExchangeCoin | Open Source Cryptocurrency">
+    <meta property="og:description"
+          content="Truly user-oriented, utility cryptocurrency. Delivering highest standards for over three years on the market!">
+    <meta property="og:image" content="https://excc.co/cover.jpg">
+    <meta property="og:url" content="https://excc.co/">
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
+    {{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed") }}
+    {{ $style := resources.Get "sass/main.scss" | toCSS  $options | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=kPL2wgQ99R">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=kPL2wgQ99R">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=kPL2wgQ99R">
+    <link rel="manifest" href="/site.webmanifest?v=kPL2wgQ99R">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=kPL2wgQ99R" color="#000000">
+    <link rel="shortcut icon" href="/favicon.ico?v=kPL2wgQ99R">
+    <meta name="apple-mobile-web-app-title" content="EXCC">
+    <meta name="application-name" content="EXCC">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>

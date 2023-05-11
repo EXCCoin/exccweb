@@ -1,0 +1,68 @@
+<footer class="footer fixed-bottom">
+    <div class="container-xxl h-100">
+        <div class="d-flex flex-row h-100">
+            <div class="col-3 h-100 align-items-lg-center align-items-sm-start">
+                <nav class="navbar h-100 socials justify-content-lg-between justify-content-sm-start">
+                    <a href="https://twitter.com/excc_team" target="_blank"><img
+                            src="/img/twi.png" alt="ExchangeCoin Twitter"></a>
+                    <a href="https://t.me/ExchangeCoinChat" target="_blank"><img
+                            src="/img/tel.png" alt="ExchangeCoin Telegram"></a>
+                    <a href="https://discord.gg/22h9YFTTsx" target="_blank"><img
+                            src="/img/dis.png" alt="ExchangeCoin Discord"></a>
+                    <a href="https://github.com/EXCCoin" target="_blank"><img
+                            src="/img/git.png" alt="ExchangeCoin Github"></a>
+                    <a href="https://medium.com/@exchangecoin" target="_blank"><img
+                            src="/img/med.png" alt="ExchangeCoin Medium"></a>
+                    <a href='https://www.facebook.com/exchangecoinofficial/' target="_blank"><img
+                            src="/img/fac.png" alt="FB"></a>
+                </nav>
+            </div>
+            <div class="h-100 flex-shrink-1 ms-auto">
+                <nav class="navbar h-100">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-link">
+                            <a href='https://coinmarketcap.com/currencies/exchange-coin/' target="_blank"><img
+                                    src="/img/cmc.png" alt="EXCC CMC"></a>
+                        </li>
+                        <li class="nav-link">
+                            <a href='https://www.coingecko.com/en/coins/exchangecoin' target="_blank"><img
+                                    src="/img/cgk.png" alt="EXCC CoinGecko"></a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="h-100 d-flex align-items-center">
+                <div class="divider"></div>
+            </div>
+            <div class="h-100">
+                <nav class="navbar h-100">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-link">
+                            <a href='/contact/'>Contact Us</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href='https://excc.co/pgp.txt' target="_blank">PGP Key</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href='https://docs.excc.co' target="_blank">Docs</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href='https://excc.co/EXCC-Brandbook.pdf' target="_blank">Brandbook</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript and dependencies -->
+    {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
+    {{ $a := resources.Get "js/jquery.min.js" }}
+    {{ $b := resources.Get "js/jquery.dataTables.min.js" }}
+    {{ $c := resources.Get "js/moment.min.js" }}
+    {{ $d := resources.Get "js/vsp.js" }}
+    {{ $js := slice $bootstrap $a $b $c $d| resources.Concat "js/bundle.js" | resources.Minify }}
+
+    <script src="{{$js.RelPermalink}}" defer></script>
+</footer>
